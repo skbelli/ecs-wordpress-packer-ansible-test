@@ -3,20 +3,20 @@ This little project aims to build "ready to use" wordpress image on an ECS clust
 
 
 
-* What you have done
+# What you have done
 
-* How run your project
+# How run your project
 
-* what are the components interact between each over
+# what are the components interact between each over
 
-* What problems did you have
+# What problems did you have
 
-* How you would have done things to have the best HA/automated architecture
+# How you would have done things to have the best HA/automated architecture
 
-* Share with us any ideas you have in mind to improve this kind of infrastructure.
+# Share with us any ideas you have in mind to improve this kind of infrastructure.
 
 
-* Some considerations before pushing the project to Production 
+# Some considerations before pushing the project to Production 
 
 
 
