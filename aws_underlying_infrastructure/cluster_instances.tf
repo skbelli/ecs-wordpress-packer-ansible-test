@@ -1,6 +1,8 @@
 data "aws_ami" "aws_linux_ecs" {
   most_recent = true
-
+  owners      = ["591542846629"] # Amazon Owner ID
+  
+  
   filter {
     name   = "name"
     values = ["amzn-ami-*-amazon-ecs-optimized"]
