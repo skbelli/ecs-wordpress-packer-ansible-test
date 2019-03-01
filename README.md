@@ -54,7 +54,7 @@ All the required code is wordpress-deployment folder
  
  2- Run packer build -var-file=variables.json wordpress_template.json
  
- Once the packer build is done, open the ALB dns_name, diaplayed also in terraform output, in any browser and you should see the Wordpress installation website.
+Once the packer build is done, open the ALB dns_name, diaplayed also in terraform output, in any browser and you should see the Wordpress installation website.
 
  
 
@@ -62,19 +62,19 @@ All the required code is wordpress-deployment folder
 
 The AWS components used to provision the AWS infrastructure and configure the Wordpress service are as following:
 
-    VPC (ip address range of /16)
-    Internet gateway (interface between VPC and the internet).
-    3 public subnet (/24) in 3 availability zone without the need of NAT gateways.
-    Route tables and route tables association for the three subnets.
-    Security groups for restricting traffic as much as possible and ensuring internal communication between the ALB, ECS and RDS on the     right ports.
-    IAM policies, roles and IAM instance profile.
-    ECS container instances in different availability zones in public subnet with auto scaling group configured and security group,         running ECS agent ( created from the latest ecs-optimized linux AMI).
-    
-	  ECS attached security group allows outbound traffic to the RDS DB instance on port 3306.
-    ALB to distribute traffic between container instances with security group allowing HTTP incoming traffic on port 80
-    MySQL RDS database instance
-    ECR repository to be used to upload the Wordpress Docker images then it will be used from docker engine running on ECS instances to      pull the images.
-    Wordpress service task definition.
+ 
+- VPC (ip address range of /16)
+- Internet gateway (interface between VPC and the internet).
+- Three public subnet (/24) in 3 availability zone without the need of NAT gateways.
+- Route tables and route tables association for the three subnets.
+- Security groups for restricting traffic as much as possible and ensuring internal communication between the ALB, ECS and RDS on the     right ports.
+- IAM policies, roles and IAM instance profile.
+- ECS container instances in different availability zones in public subnet with auto scaling group configured and security group,         running ECS agent ( created from the latest ecs-optimized linux AMI).
+- ECS attached security group allows outbound traffic to the RDS DB instance on port 3306.
+- ALB to distribute traffic between container instances with security group allowing HTTP incoming traffic on port 80
+- MySQL RDS database instance
+- ECR repository to be used to upload the Wordpress Docker images then it will be used from docker engine running on ECS instances to      pull the images.
+- Wordpress service task definition.
 
 	
 I opted for a simple, Highly Available and secure AWS architecture.
@@ -181,18 +181,17 @@ Pushing to Production any project should be done with Confidence !
 All the above mentionned improvements should be taken into account
 
 
-
-    Secrets management
-    Terraform state management
-	  Web root file system + scheduled backups
-    SSL termination
-    Production-ready RDS database
-    Production-ready PHP & nginx configuration
-    Production-ready instance types for the ECS instances
-	  Auto-scaling
-    Wordpress optimization, caching, and CDN
-    Logs management and monitoring
-	  Route 53 for domains and multi-region availability.
+- Secrets management
+- Terraform state management
+- Web root file system + scheduled backups
+- SSL termination
+- Production-ready RDS database
+- Production-ready PHP & nginx configuration
+- Production-ready instance types for the ECS instances
+- Auto-scaling
+- Wordpress optimization, caching, and CDN
+- Logs management and monitoring
+- Route 53 for domains and multi-region availability.
    
 
 
