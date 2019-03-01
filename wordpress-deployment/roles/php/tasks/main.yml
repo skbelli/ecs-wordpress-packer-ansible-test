@@ -15,7 +15,6 @@
     name: www-data
     uid: 1001
     state: present
-    create_home: no
     group: www-data
     system: yes
 
